@@ -193,7 +193,7 @@ html, body {
   }
 
   body.theme-seite2 {
-    background-image: url('bilder/wald2.png');
+    background-image: url('wald2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
