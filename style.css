@@ -1,14 +1,201 @@
-body {
-    background-color: #f0f0f0;
-    font-family: sans-serif;
+/* Grundlayout */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+  
+  body {
+    transition: background-image 0.5s ease-in-out;
+    user-select: none;
+    background-color: #000;
+    background-image: url('bilder/image.png'); /* <-- Passe Pfad an */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Inhaltsbereich */
+  .content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    padding: 50px;
-}
+    color: white;
 
-h1 {
-    color: darkblue;
-}
+    max-width: 800px;    /* Begrenzung der Breite */
+    margin: 0 auto;      /* automatisch zentrieren */
+    padding: 0 20px;     /* innerer Rand links/rechts für kleine Screens */
+  }
+  
+  .content h1 {
+    color: rgb(48, 138, 23);
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black,
+   -2px  0   0 black,
+    2px  0   0 black,
+    0   -2px 0 black,
+    0    2px 0 black,
+   -3px  0   0 black,
+    3px  0   0 black,
+    0   -3px 0 black,
+    0    3px 0 black;
+    margin-top: -80px;
+    font-size: 64px;
+  }
+  
+  .content h2 {
+    color: rgb(191, 26, 150);
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black,
+   -2px  0   0 black,
+    2px  0   0 black,
+    0   -2px 0 black,
+    0    2px 0 black,
+   -3px  0   0 black,
+    3px  0   0 black,
+    0   -3px 0 black,
+    0    3px 0 black;
+    font-size: 48px;
+  }
+  
+  .content p {
+    color: rgb(179, 139, 45);
+    font-size: 1.4em;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black,
+   -2px  0   0 black,
+    2px  0   0 black,
+    0   -2px 0 black,
+    0    2px 0 black,
+   -3px  0   0 black,
+    3px  0   0 black,
+    0   -3px 0 black,
+    0    3px 0 black;
+    font-size: 32px;
+  }
+  
+  .pixel-button {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+    background-color: #222;
+    padding: 12px 24px;
+    border: 4px solid white;
+    outline: 2px solid black;
+    box-shadow: 0 0 0 4px black;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .pixel-button:hover {
+    background-color: #444;
+    color: rgb(255, 238, 0);
+    border-color: rgb(255, 238, 0);
+  }
+  
+  .pixel-button:active {
+    transform: translateY(2px);
+  }
+  
+  /* Nebel-Layer */
+  .fog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .fog .image01, .fog .image02 {
+    float: left;
+    width: 50%;
+    height: 100%;
+  }
+  
+  #foglayer_01 {
+    animation: fog_opacity_1 10s linear infinite, fog_move 15s linear infinite;
+  }
+  #foglayer_02 {
+    animation: fog_opacity_2 21s linear infinite, fog_move 13s linear infinite;
+  }
+  #foglayer_03 {
+    animation: fog_opacity_3 17s linear infinite, fog_move 17s linear infinite;
+  }
+  
+  #foglayer_01 .image01, #foglayer_01 .image02 {
+    background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png")
+      center center/cover no-repeat transparent;
+  }
+  
+  #foglayer_02 .image01, #foglayer_02 .image02,
+  #foglayer_03 .image01, #foglayer_03 .image02 {
+    background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png")
+      center center/cover no-repeat transparent;
+  }
+  
+  /* Animationen */
+  @keyframes fog_opacity_1 {
+    0%, 100% { opacity: 0.1; }
+    22% { opacity: 0.5; }
+    40% { opacity: 0.28; }
+    58% { opacity: 0.4; }
+    80% { opacity: 0.16; }
+  }
+  
+  @keyframes fog_opacity_2 {
+    0%, 100% { opacity: 0.5; }
+    25% { opacity: 0.2; }
+    50% { opacity: 0.1; }
+    80% { opacity: 0.3; }
+  }
+  
+  @keyframes fog_opacity_3 {
+    0%, 100% { opacity: 0.8; }
+    27% { opacity: 0.2; }
+    52% { opacity: 0.6; }
+    68% { opacity: 0.3; }
+  }
+  
+  @keyframes fog_move {
+    0% { left: 0; }
+    100% { left: -100%; }
+  }
 
-p {
-    font-size: 1.2em;
-}
+  .nebel-frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    border: none;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  body.theme-seite2 {
+    background-image: url('bilder/wald2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+ 
