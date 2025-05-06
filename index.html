@@ -7,25 +7,69 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <div id="timer-container" style="display: none;">
+    <div id="timer-bar-wrapper">
+      <div id="timer-bar"></div>
+    </div>
+    <span id="time">05:00</span>
+  </div>
         <div class="content" id="seite1">
             <h1>Rätsel #4</h1>
             <h2>Das Einhorn</h2>
             <p>Wirst du es aus dem Wald schaffen?</p>
             <button class="pixel-button" onclick="zeigeSeite(2)">Reise starten</button>
           </div>
-        
           <div class="content" id="seite2" style="display:none;">
             <p>Auf deiner Reise begegnest du im Wald ein Einhorn. Dieser kann dir helfen, den Weg zum Waldrand zu finden. Das Einhorn widerrum braucht erstmal das Schlüsselwort, um dich dorthin führen zu können... </p>
             <button class="pixel-button" onclick="zeigeSeite(3)">Weiter</button>
           </div>
         
           <div class="content" id="seite3" style="display:none;">
-            <h1>Rätsel #3</h1>
-            <h2>Die Truhe</h2>
-            <p>Drei Schlüssel, nur einer passt...</p>
+            <h2>Aufgabe: MAC-Adresse</h2>
+            <p>Finde die MAC-Adresse heraus.</p>
             <button class="pixel-button" onclick="zeigeSeite(2)">Zurück</button>
-            <button class="pixel-button" onclick="zeigeSeite(1)">Weiter</button>
+            <button class="pixel-button" onclick="zeigeSeite(4)">Weiter</button>
+          </div>
+
+          <div class="content" id="seite4" style="display:none;">
+            <p>Gebe die MAC-Adresse ein:</p>
+
+            <div class="otp-container">
+              <input class="otp-input" maxlength="1" type="text">
+              <input class="otp-input" maxlength="1" type="text">
+              <span class="colon">:</span>
+              <input class="otp-input" maxlength="1" type="text">
+              <input class="otp-input" maxlength="1" type="text">
+              <span class="colon">:</span>
+              <input class="otp-input" maxlength="1" type="text">
+              <input class="otp-input" maxlength="1" type="text">
+              <span class="colon">:</span>
+              <input class="otp-input" maxlength="1" type="text">
+              <input class="otp-input" maxlength="1" type="text">
+              <span class="colon">:</span>
+              <input class="otp-input" maxlength="1" type="text">
+              <input class="otp-input" maxlength="1" type="text">
+              <span class="colon">:</span>
+              <input class="otp-input" maxlength="1" type="text">
+              <input class="otp-input" maxlength="1" type="text">
+              <button id="fertigBtn" class="pixel-button" onclick="prüfeCode()">Fertig</button>
+              
+            </div>
+            
+            <button class="pixel-button" onclick="zeigeSeite(3)">Zurück</button>
+            <button id="weiterBtn" class="pixel-button" disabled onclick="zeigeSeite(5)">
+              Weiter
+            </button>
+            <p id="feedback" class="feedback"></p>
+          </div>
+
+          <div class="content" id="seite5" style="display:none;">
+            <h1>Herzlichen Glückwunsch!</h1>
+            <h2>Dein Zugangscode lautet <br>
+              <span style="color: rgb(208, 194, 158); font-family: Arial, Helvetica, sans-serif; display: inline-block; margin-top: 15px;">3840</span>
+            </h2>
+            <p>Merke dir den Code und viel Erfolg!</p>
+            <button class="pixel-button" onclick="versucheFensterZuSchließen()">Rätsel beenden</button>
           </div>
 
   
@@ -35,5 +79,6 @@
 
   <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>

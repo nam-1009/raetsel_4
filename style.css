@@ -199,3 +199,116 @@ html, body {
     background-position: center;
   }
  
+  #timer-bar-wrapper {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: none;
+  }
+  
+  #timer-bar {
+    height: 100%;
+    background-color: limegreen;
+    width: 100%;
+    transition: width 1s linear, background-color 0.5s ease;
+    display: none;
+  }
+  
+  #time {
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black,
+   -2px  0   0 black,
+    2px  0   0 black,
+    0   -2px 0 black,
+    0    2px 0 black,
+   -3px  0   0 black,
+    3px  0   0 black,
+    0   -3px 0 black,
+    0    3px 0 black;
+    font-size: 40px;
+  }
+
+  #timer-container {
+    position: absolute;
+    top: 20px; /* oder unten: 20px; je nach Position */
+    left: center;
+    z-index: 0; /* kleiner als alle anderen sichtbaren Inhalte */
+    opacity: 1; /* macht den Timer leicht transparent */
+    pointer-events: none; /* verhindert, dass er anklickbar ist */
+  }
+
+  .otp-field {
+    display: flex;
+  }
+
+  .otp-field input {
+    width: 24px;
+    font-size: 32px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    border: 2px solid gray;
+    background-color: #000;
+    font-weight: bold;
+    color: white;
+    outline: none;
+
+  }
+
+.otp-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.otp-input {
+  width: 50px;
+  height: 60px;
+  font-size: 2em;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+}
+
+#fertigBtn {
+  margin-left: 15px;
+  padding: 12px 20px;
+  font-size: 1em;
+}
+
+#weiterBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.colon {
+  font-size: 2em;
+  color: white;
+  margin: 0 5px;
+  line-height: 50px;
+}
+.feedback {
+  height: 1.5em; /* Platz reservieren */
+  color: red;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feedback.show {
+  opacity: 1;
+}
