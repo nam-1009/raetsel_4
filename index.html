@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Rätsel #4: Das Einhorn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <div class="content" id="seite1">
+            <h1>Rätsel #4</h1>
+            <h2>Das Einhorn</h2>
+            <p>Wirst du es aus dem Wald schaffen?</p>
+            <button class="pixel-button" onclick="zeigeSeite(2)">Reise starten</button>
+          </div>
+        
+          <div class="content" id="seite2" style="display:none;">
+            <p>Auf deiner Reise begegnest du im Wald ein Einhorn. Dieser kann dir helfen, den Weg zum Waldrand zu finden. Das Einhorn widerrum braucht erstmal das Schlüsselwort, um dich dorthin führen zu können... </p>
+            <button class="pixel-button" onclick="zeigeSeite(3)">Weiter</button>
+          </div>
+        
+          <div class="content" id="seite3" style="display:none;">
+            <h1>Rätsel #3</h1>
+            <h2>Die Truhe</h2>
+            <p>Drei Schlüssel, nur einer passt...</p>
+            <button class="pixel-button" onclick="zeigeSeite(2)">Zurück</button>
+            <button class="pixel-button" onclick="zeigeSeite(1)">Weiter</button>
+          </div>
+
+  
+
+  <!-- Fog-Layer -->
+  <iframe src="nebel.html" class="nebel-frame"></iframe>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

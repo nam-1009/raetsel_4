@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .fog {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .fog .image01, .fog .image02 {
+      float: left;
+      width: 50%;
+      height: 100%;
+    }
+
+    #foglayer_01 {
+      animation: fog_opacity_1 10s linear infinite, fog_move 15s linear infinite;
+    }
+    #foglayer_02 {
+      animation: fog_opacity_2 21s linear infinite, fog_move 13s linear infinite;
+    }
+    #foglayer_03 {
+      animation: fog_opacity_3 17s linear infinite, fog_move 17s linear infinite;
+    }
+
+    #foglayer_01 .image01, #foglayer_01 .image02 {
+      background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png") center center/cover no-repeat transparent;
+    }
+
+    #foglayer_02 .image01, #foglayer_02 .image02,
+    #foglayer_03 .image01, #foglayer_03 .image02 {
+      background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png") center center/cover no-repeat transparent;
+    }
+
+    @keyframes fog_opacity_1 {
+      0%, 100% { opacity: 0.1; }
+      22% { opacity: 0.5; }
+      40% { opacity: 0.28; }
+      58% { opacity: 0.4; }
+      80% { opacity: 0.16; }
+    }
+
+    @keyframes fog_opacity_2 {
+      0%, 100% { opacity: 0.5; }
+      25% { opacity: 0.2; }
+      50% { opacity: 0.1; }
+      80% { opacity: 0.3; }
+    }
+
+    @keyframes fog_opacity_3 {
+      0%, 100% { opacity: 0.8; }
+      27% { opacity: 0.2; }
+      52% { opacity: 0.6; }
+      68% { opacity: 0.3; }
+    }
+
+    @keyframes fog_move {
+      0% { left: 0; }
+      100% { left: -100%; }
+    }
+  </style>
+</head>
+<body>
+  <div id="foglayer_01" class="fog">
+    <div class="image01"></div>
+    <div class="image02"></div>
+  </div>
+  <div id="foglayer_02" class="fog">
+    <div class="image01"></div>
+    <div class="image02"></div>
+  </div>
+  <div id="foglayer_03" class="fog">
+    <div class="image01"></div>
+    <div class="image02"></div>
+  </div>
+</body>
+</html>
