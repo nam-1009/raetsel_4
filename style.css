@@ -10,7 +10,7 @@ html, body {
     transition: background-image 0.5s ease-in-out;
     user-select: none;
     background-color: #000;
-    background-image: url('bilder/image.png'); /* <-- Passe Pfad an */
+    background-image: url('image.png'); /* <-- Passe Pfad an */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
