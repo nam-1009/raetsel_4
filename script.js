@@ -104,9 +104,23 @@ function prüfeCode() {
   const code = Array.from(inputs).map(i => i.value.trim()).join('').toLowerCase();
   const feedback = document.getElementById('feedback');
 
-  if (code.length === 12 && /^[0-9a-f]{12}$/.test(code)) {
-    const zielMac = "b827ebd3222c";
-    if (code === zielMac) {
+  if (code.length !== 12) {
+    feedback.textContent = "⚠️ Bitte alle 12 Felder ausfüllen!";
+    feedback.className = "feedback show";
+  
+    setTimeout(() => {
+      feedback.className = "feedback hide";
+    }, 2000);
+  } else if (!/^[0-9a-f]{12}$/i.test(code)) {
+    feedback.textContent = "⚠️ Ungültige Zeichen – nur 0–9 und A–F erlaubt!";
+    feedback.className = "feedback show";
+  
+    setTimeout(() => {
+      feedback.className = "feedback hide";
+    }, 2000);
+  } else {
+    const zielMac = "b827ebd3222c".toLowerCase();
+    if (code.toLowerCase() === zielMac) {
       clearInterval(countdown);
       document.getElementById('weiterBtn').disabled = false;
       feedback.textContent = "✅ Korrekt!";
@@ -114,18 +128,11 @@ function prüfeCode() {
     } else {
       feedback.textContent = "❌ Falsche MAC-Adresse";
       feedback.className = "feedback show";
-
+  
       setTimeout(() => {
         feedback.className = "feedback hide";
       }, 2000);
     }
-  } else {
-    feedback.textContent = "⚠️ Bitte alle 12 Felder ausfüllen!";
-    feedback.className = "feedback show";
-
-    setTimeout(() => {
-      feedback.className = "feedback hide";
-    }, 2000);
   }
 }
 
